@@ -99,7 +99,7 @@ for key in total_counts:
 On a 64 core machine doing some very heavy processing, `htop` can
 produce results like:
 
-[[./images/many-cores-in-use.png]]
+![./images/many-cores-in-use.png](many cores in use)
 
 # License
 
