@@ -31,13 +31,22 @@ Code: https://github.com/hardaker/pcap-parallel
   help.
 - It can handle compressed files (gzip, bz2, and xz) assuming you have
   the needed decompression modules installed.
-
+- It returns a list of `Future` objects, so make sure to call
+  `.result()` on each item in the list in order to ensure you get the
+  actual results from your callback.
+- Because the results are run within a separate process, the contents
+  to return from each callback should be pickleable.
 
 # Installation
 
     pip install pcap-parallel
 
 # Usage
+
+The following example uses the `dpkt` module to count all the source
+IP addresses seen in a PCAP file and display the results.  Note that
+this is not super intensive processing, but at least demonstrates how
+the module should work.
 
 ``` python
 import dpkt
