@@ -10,7 +10,12 @@ from logging import debug, info
 
 
 class PCAPParallel:
-    "Quickly reads a PCAP file and splits into multiple io.BytesIO streams"
+    """Quickly reads a PCAP file and splits the contents.
+
+    Each file is split into multiple io.BytesIO streams, which will
+    result in loading the entire contents into memory.  Callbacks for
+    each section will be executed in a separate process.
+    """
 
     def __init__(
         self,
@@ -116,7 +121,6 @@ class PCAPParallel:
 
         # return a raw file and hope it's not compressed'
         return open(filename, "rb")
-
 
     def split(self) -> List[io.BytesIO] | List[Future]:
         "Does the actual reading and splitting"
