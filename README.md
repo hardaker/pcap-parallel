@@ -94,6 +94,13 @@ for key in total_counts:
     print(f"{key:<30} {str(total_counts[key]):>8}")
 ```
 
+# Running full out
+
+On a 64 core machine doing some very heavy processing, `htop` can
+produce results like:
+
+[[./images/many-cores-in-use.png]]
+
 # License
 
 See the [./LICENSE] file for the details of the Apache 2.0 license.
