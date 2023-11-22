@@ -1,7 +1,7 @@
 import os
 import time
 from logging import debug
-from traffic_taffy.pcap_splitter import PCAPSplitter
+from pcap_parallel import PCAPParallel
 import dpkt
 
 
@@ -31,7 +31,7 @@ def test_pcap_splitter():
         split_size = 100
         maximum_count = 0
 
-        ps = PCAPSplitter(
+        ps = PCAPParallel(
             test_pcap,
             split_size=split_size,
             callback=buffer_callback,
