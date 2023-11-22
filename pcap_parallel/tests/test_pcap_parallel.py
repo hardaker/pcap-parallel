@@ -13,7 +13,7 @@ def buffer_callback(pcap_io_buffer):
     return count
 
 
-def test_pcap_splitter():
+def test_pcap_parallel():
     "tests that the class works -- requires a test.pcap or similar file to exist"
     for test_pcap in [
         "test.pcap",
@@ -46,4 +46,4 @@ def test_pcap_splitter():
 
 
 if __name__ == "__main__":
-    test_pcap_splitter()
+    test_pcap_parallel()
