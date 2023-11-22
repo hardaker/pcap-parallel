@@ -36,6 +36,7 @@ Code: https://github.com/hardaker/pcap-parallel
   actual results from your callback.
 - Because the results are run within a separate process, the contents
   to return from each callback should be pickleable.
+- TODO / Features needed: range(100)
 
 # Installation
 
