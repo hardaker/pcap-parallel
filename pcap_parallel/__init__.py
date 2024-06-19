@@ -153,7 +153,7 @@ class PCAPParallel:
 
         # read from our files current position to where the dpkt reader is
         bytes_to_read: int = self.dpkt_data.tell() - self.our_data.tell()
-        if self.bytes_to_read == 0:
+        if bytes_to_read == 0:
             debug("no bytes to read")
             return
 
