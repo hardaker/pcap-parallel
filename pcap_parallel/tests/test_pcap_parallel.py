@@ -13,8 +13,11 @@ def buffer_callback(pcap_io_buffer):
     return count
 
 
-def test_pcap_parallel():
-    "tests that the class works -- requires a test.pcap or similar file to exist"
+def test_pcap_parallel(*args, **kwargs):
+    """tests that the class works -- requires a test.pcap or similar file to exist.
+
+    Adding additional args/kwargs will be passed to the PCAPParallel init.
+    """
     for test_pcap in [
         "test.pcap",
         "testgz.pcap.gz",
@@ -33,9 +36,11 @@ def test_pcap_parallel():
 
         ps = PCAPParallel(
             test_pcap,
+            *args,
             split_size=split_size,
             callback=buffer_callback,
             maximum_count=maximum_count,
+            **kwargs,
         )
         results = ps.split()
 
